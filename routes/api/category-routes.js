@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
    })
    res.status(200).json(data);
   }catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try{
-    const data = Category.findAll({
+    const data = Category.findOne({
       where: {
         id: req.params.id,
       },
