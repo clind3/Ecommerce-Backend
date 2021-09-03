@@ -4,7 +4,7 @@
   
   ## Description
 
-  This project allows the user to do GET, POST, PUSH, and DELETE requests to the database.
+  Created a CRUD backend application that allows the user to do GET, POST, PUSH, and DELETE requests to the database.
 
   ## Table of Contents
   - [Installation](#installation)
@@ -25,7 +25,13 @@ https://user-images.githubusercontent.com/73320520/131950569-06ae24d0-23e0-4297-
 
   Celina Lind
 
-Sequelize npm documentation, Activities from OSU Bootcamp
+[MySQL2](https://www.npmjs.com/package/mysql2)
+
+[Sequelize](https://www.npmjs.com/package/sequelize)
+
+[dotenv](https://www.npmjs.com/package/dotenv)
+
+Activities from OSU Bootcamp
 
  Contact me with any questions at my email clind323@gmail.com or at my GitHub clind3
 
