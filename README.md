@@ -4,7 +4,7 @@
   
   ## Description
 
-  This project allows the user to to do get, post, push, and delete requests to the database.
+  This project allows the user to do GET, POST, PUSH, and DELETE requests to the database.
 
   ## Table of Contents
   - [Installation](#installation)
