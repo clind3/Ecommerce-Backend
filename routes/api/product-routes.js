@@ -7,37 +7,36 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
-  try{
-    const data = Product.findAll({
+  Product.findAll({
       include: [{model: Category}, {model: Tag}]
-    });
-    res.status(200).json(data);
-  }catch(err){
+    }).then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err)=>{
     res.status(500).json(err);
-  }
+  })
 });
 
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
-  try{
-    const data = Product.findOne({
+  Product.findOne({
       where: {
         id: req.params.id,
       },
       include: [{model: Category}, {model: Tag}]
-    })
-
-    if (!data) {
+    }).then((data) => {
+      if (!data) {
       res.status(404).json({ message: 'No Product found with that id!' });
       return;
     }
 
     res.status(200).json(data);
-  }catch (err) {
+    })   
+  .catch ((err) =>{
     res.status(500).json(err);
-  }
+  })
 });
 
 // create new product
@@ -116,22 +115,22 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
-  try {
-    const data = await Product.destroy({
+   Product.destroy({
       where: {
         id: req.params.id,
       },
-    });
-    //if no data found return err message
+    }).then((data) => {
+      //if no data found return err message
     if (!data) {
       res.status(404).json({ message: 'No product found with that id!' });
       return;
     }
 
     res.status(200).json(data);
-  } catch (err) {
+    })
+    .catch((err)=> {
     res.status(500).json(err);
-  }
+  }) 
 });
 
 module.exports = router;
